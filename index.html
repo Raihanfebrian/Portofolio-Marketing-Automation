@@ -1292,6 +1292,520 @@ body.lightbox-open .lightbox-close {
 .image-lightbox.active .lightbox-close {
   box-shadow: 0 0 30px rgba(124,109,250,0.35);
 }
+/* FINAL MOBILE OPTIMIZATION */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(22,22,31,0.86);
+  color: var(--text);
+  cursor: pointer;
+  position: relative;
+}
+
+.nav-toggle span {
+  position: absolute;
+  left: 11px;
+  width: 18px;
+  height: 2px;
+  border-radius: 99px;
+  background: var(--text);
+  transition: transform 0.25s ease, top 0.25s ease;
+}
+
+.nav-toggle span:first-child {
+  top: 15px;
+}
+
+.nav-toggle span:last-child {
+  top: 24px;
+}
+
+nav.menu-open .nav-toggle span:first-child {
+  top: 20px;
+  transform: rotate(45deg);
+}
+
+nav.menu-open .nav-toggle span:last-child {
+  top: 20px;
+  transform: rotate(-45deg);
+}
+
+/* Tablet */
+@media (max-width: 1050px) {
+  .hero-inner {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+  }
+
+  .hero-layout {
+    grid-template-columns: 1fr;
+    gap: 46px;
+  }
+
+  .hero-content {
+    max-width: 760px;
+  }
+
+  .hero-visual {
+    justify-content: flex-start;
+  }
+
+  .profile-card {
+    width: min(340px, 76vw);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  body {
+    cursor: auto;
+  }
+
+  .cursor,
+  .cursor-ring {
+    display: none;
+  }
+
+  nav,
+  nav.scrolled {
+    padding: 14px 18px;
+  }
+
+  .nav-logo {
+    font-size: 14px;
+  }
+
+  .nav-actions {
+    gap: 10px;
+  }
+
+  .nav-cta {
+    padding: 8px 13px;
+    font-size: 12px;
+    border-radius: 10px;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 18px;
+    right: 18px;
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    padding: 10px;
+    border-radius: 16px;
+    background: rgba(13,13,20,0.96);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 24px 70px rgba(0,0,0,0.42);
+  }
+
+  nav.menu-open .nav-links {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 13px 14px;
+    border-radius: 10px;
+    font-size: 12px;
+  }
+
+  .nav-links a:hover {
+    background: rgba(124,109,250,0.1);
+  }
+
+  section {
+    padding: 72px 18px;
+  }
+
+  #hero {
+    min-height: auto;
+    padding: 96px 18px 56px;
+    align-items: flex-start;
+  }
+
+  .hero-grid-lines {
+    background-size: 42px 42px;
+    opacity: 0.75;
+  }
+
+  .hero-glow {
+    width: 420px;
+    height: 420px;
+    top: -120px;
+    right: -180px;
+  }
+
+  .hero-glow2 {
+    width: 280px;
+    height: 280px;
+    left: -120px;
+    bottom: 160px;
+  }
+
+  .hero-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .hero-badge {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    padding: 6px 12px;
+    margin-bottom: 22px;
+  }
+
+  .hero-title {
+    font-size: clamp(42px, 14vw, 64px);
+    line-height: 0.98;
+    letter-spacing: -0.04em;
+  }
+
+  .hero-sub {
+    margin-top: 20px;
+    font-size: 15px;
+    line-height: 1.65;
+    max-width: 100%;
+  }
+
+  .hero-actions {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 18px;
+  }
+
+  .hero-stats {
+    margin-top: 42px;
+    padding-top: 28px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 18px;
+  }
+
+  .stat-num {
+    font-size: 30px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+    line-height: 1.4;
+  }
+
+  .hero-visual {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .profile-card {
+    width: min(320px, 88vw);
+    border-radius: 24px;
+  }
+
+  .profile-float {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    max-width: calc(100% - 28px);
+  }
+
+  .profile-orbit {
+    display: none;
+  }
+
+  .section-label {
+    font-size: 10px;
+  }
+
+  .section-title {
+    font-size: clamp(30px, 9vw, 42px);
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 38px;
+  }
+
+  .about-text p {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .pillars {
+    gap: 12px;
+  }
+
+  .pillar {
+    padding: 20px;
+    gap: 14px;
+  }
+
+  .pillar-icon {
+    min-width: 40px;
+    height: 40px;
+    font-size: 22px;
+  }
+
+  .projects-header {
+    margin-bottom: 34px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .project-card.featured {
+    grid-column: span 1;
+  }
+
+  .project-preview,
+  .project-card.featured .project-preview {
+    height: 190px;
+  }
+
+  .project-body {
+    padding: 20px;
+  }
+
+  .project-footer {
+    align-items: flex-start;
+    gap: 12px;
+    flex-direction: column;
+  }
+
+  .project-link {
+    width: 100%;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 38px;
+  }
+
+  .skill-group {
+    padding: 22px 20px;
+  }
+
+  .chip {
+    font-size: 12px;
+    gap: 10px;
+  }
+
+  .chip-level {
+    white-space: nowrap;
+  }
+
+  .timeline {
+    margin-top: 42px;
+  }
+
+  .timeline-item {
+    padding-left: 24px;
+    padding-bottom: 44px;
+  }
+
+  .tl-head {
+    gap: 12px;
+  }
+
+  .tl-logo {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: 12px;
+  }
+
+  .tl-role {
+    font-size: 17px;
+    line-height: 1.35;
+  }
+
+  .tl-company {
+    font-size: 13px;
+  }
+
+  .tl-bullets li {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .exp-gallery {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 16px;
+    max-width: 100%;
+  }
+
+  .exp-photo {
+    aspect-ratio: 4 / 3;
+    border-radius: 14px;
+  }
+
+  .edu-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 38px;
+  }
+
+  .edu-card {
+    padding: 22px 20px;
+  }
+
+  .achievement-list {
+    grid-template-columns: 1fr;
+  }
+
+  .achievement-item {
+    padding: 14px 16px;
+    align-items: flex-start;
+  }
+
+  .contact-title {
+    font-size: clamp(32px, 10vw, 46px);
+  }
+
+  .contact-sub {
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+
+  .contact-links {
+    flex-direction: column;
+  }
+
+  .contact-link {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 18px;
+  }
+
+  footer {
+    padding: 24px 18px;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .image-lightbox {
+    padding: 16px;
+  }
+
+  .lightbox-content {
+    width: 100%;
+    max-height: 84vh;
+  }
+
+  .lightbox-content img {
+    max-height: 84vh;
+    border-radius: 14px;
+  }
+
+  .lightbox-close {
+    top: 10px;
+    right: 10px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 420px) {
+  nav,
+  nav.scrolled {
+    padding: 12px 14px;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+
+  .nav-links {
+    left: 14px;
+    right: 14px;
+  }
+
+  section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  #hero {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .hero-title {
+    font-size: clamp(38px, 15vw, 54px);
+  }
+
+  .hero-sub {
+    font-size: 14px;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 14px;
+  }
+
+  .stat-num {
+    font-size: 27px;
+  }
+
+  .project-preview,
+  .project-card.featured .project-preview {
+    height: 170px;
+  }
+
+  .profile-card {
+    width: min(300px, 90vw);
+  }
+
+  .profile-float-title {
+    font-size: 12px;
+  }
+
+  .profile-float-sub {
+    font-size: 8px;
+  }
+
+  .tl-head {
+    flex-direction: column;
+  }
+
+  .tl-logo {
+    margin-bottom: 2px;
+  }
+}
 </style>
 </head>
 <body>
@@ -1302,14 +1816,23 @@ body.lightbox-open .lightbox-close {
 <!-- NAV -->
 <nav id="navbar">
   <a href="#hero" class="nav-logo">RF<span>.</span></a>
-  <ul class="nav-links">
+
+  <ul class="nav-links" id="navLinks">
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="mailto:raihanfebrian379@gmail.com" class="nav-cta">Get In Touch</a>
+
+  <div class="nav-actions">
+    <a href="mailto:raihanfebrian379@gmail.com" class="nav-cta">Get In Touch</a>
+
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation menu">
+      <span></span>
+      <span></span>
+    </button>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -2015,6 +2538,32 @@ document.addEventListener('keydown', e => {
     closeLightbox();
   }
 });
+// Mobile navigation
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+
+if (navToggle && navbar && navLinks) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = navbar.classList.toggle('menu-open');
+    navToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+  });
+
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navbar.classList.remove('menu-open');
+      navToggle.setAttribute('aria-label', 'Open navigation menu');
+    });
+  });
+
+  document.addEventListener('click', e => {
+    const clickedInsideNav = navbar.contains(e.target);
+
+    if (!clickedInsideNav) {
+      navbar.classList.remove('menu-open');
+      navToggle.setAttribute('aria-label', 'Open navigation menu');
+    }
+  });
+}
 </script>
 </body>
 </html>
